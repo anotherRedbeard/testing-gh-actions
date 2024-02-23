@@ -48,7 +48,7 @@ jobs:
           sleep 15
   Production:
     runs-on: ubuntu-latest
-    if: github.event_name == 'workflow_dispatch'
+    if: github.event.inputs.environment == 'Production'
     needs: [Test, Load-Test]
     environment: 
       name: Production
