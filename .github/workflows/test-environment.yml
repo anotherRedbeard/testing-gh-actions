@@ -1,41 +1,21 @@
-name: Demo Test Environments
+name: DEmo Test Environment
 
-on: 
-  workflow_dispatch:
-    inputs:
-      environment:
-        description: 'Environment to deploy to'
-        type: environment
-        required: true
+on: [workflow_dispatch]
 
 jobs:
   Build:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          echo "Triggering event:  ${{ github.event_name }}"
-  Test:
-    runs-on: ubuntu-latest
-    needs: Build
-    environment: Test
-    steps:
-      - run: |
-          echo ":bug: Testing..."
-  Load-Test:
-    runs-on: ubuntu-latest
-    needs: Build
-    environment: Load-Test
-    steps:
-      - run: |
-          echo ":bug: Load-Testing..."
+          echo "Triggering event: ${{ github_event_name }}
           sleep 15
   Production:
     runs-on: ubuntu-latest
-    needs: [Test, Load-Test]
-    environment: 
-      name: Production
+    needs: [Build]
+    environment:
+      name: Prod-2
       url: https://writeabout.net
     steps:
       - run: |
-          echo ":airplane: Step 1 deploying..."
-          sleep 10
+          echo "Production!"
+          
