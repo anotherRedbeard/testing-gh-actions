@@ -1,0 +1,10 @@
+name: New Test
+
+on: [workflow_dispatch]
+
+jobs:
+  my-test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "This job was triggered by event: ${{ github.event_name }} :rocket:"
