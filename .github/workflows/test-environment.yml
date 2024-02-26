@@ -16,7 +16,6 @@ jobs:
           echo "Triggering event:  ${{ github.event_name }}"
   Test:
     runs-on: ubuntu-latest
-    if: github.event_name == 'workflow_dispatch'
     needs: Build
     environment: Test
     steps:
@@ -24,7 +23,6 @@ jobs:
           echo ":bug: Testing..."
   Load-Test:
     runs-on: ubuntu-latest
-    if: github.event_name == 'workflow_dispatch'
     needs: Build
     environment: Load-Test
     steps:
@@ -33,7 +31,6 @@ jobs:
           sleep 15
   Production:
     runs-on: ubuntu-latest
-    if: github.event.inputs.environment == 'Production'
     needs: [Test, Load-Test]
     environment: 
       name: Production
