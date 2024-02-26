@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          echo "Triggering event: ${{ github.event_name }}
+          echo "Triggering event: ${{ github.event_name }}"
           sleep 15
   Production:
     runs-on: ubuntu-latest
