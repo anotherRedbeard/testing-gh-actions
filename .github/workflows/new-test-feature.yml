@@ -1,4 +1,5 @@
 name: NEWTEST GitHub Actions Demo
+run-name: NEWTEST GitHub Actions Demo - ${{ github.run_number }}
 
 on:
   push:
