@@ -7,14 +7,14 @@ jobs:
     concurrency: group1
     runs-on: ubuntu-latest
     steps:
-      - run: sleep 60
+      - run: sleep 30
       - run: echo "Hello World! $(date)"
    
   job2:
     concurrency: group1
     runs-on: ubuntu-latest
     steps:
-      - run: sleep 60
+      - run: sleep 30
       - run: echo "Hello World! $(date)"
       
   job3:
@@ -24,7 +24,7 @@ jobs:
       
     runs-on: ubuntu-latest
     steps:
-      - run: sleep 60
+      - run: sleep 30
       - run: echo "Hello World! $(date)"
       
   job4:
@@ -34,5 +34,5 @@ jobs:
       
     runs-on: ubuntu-latest
     steps:
-      - run: sleep 60
+      - run: sleep 30
       - run: echo "Hello World! $(date)"
